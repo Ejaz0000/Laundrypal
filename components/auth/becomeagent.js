@@ -1,9 +1,23 @@
 import Link from "next/link";
 import logo from "../../public/images/logo.png";
 import Image from "next/image";
+import { useState } from "react";
+import {useEffect} from 'react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
+import { useRouter } from 'next/router';
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
+
+
+
 
 export default function Login() {
 
+  const router = useRouter();
+  
   
 
   const handleSignup = async (e) => {
@@ -41,10 +55,17 @@ export default function Login() {
       }),
     });
     const data = await res.json();
-    console.log(data);
+    console.log(data); 
+    
+    const email = e.target.email.value;
+    const name = e.target.name.value;
     if(res.status === 200) {
       alert("Account created successfully");
-      window.location.href = "/auth/loginagent";
+      
+      router.push({
+        pathname: '/additems/',
+        query: { email: email,  name: name}
+    })
     } else {
       alert(data.message);
     }
@@ -144,6 +165,8 @@ export default function Login() {
                   </label>
                 </div>
                 </div>
+                
+                
                 <div>
                   <label htmlFor="city" className="block text-sm font-medium text-gray-700">
                     city
@@ -228,6 +251,8 @@ export default function Login() {
                   </div>
                 </div>
   
+                
+                  
                 <div>
                   <button
                     type="submit"
@@ -236,6 +261,7 @@ export default function Login() {
                     Sign up
                   </button>
                 </div>
+                
               </form>
   
               <div className="mt-6">

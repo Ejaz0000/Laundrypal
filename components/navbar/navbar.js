@@ -57,6 +57,8 @@ export default function Navbar({onSearchChange }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState({});  
+  const [notify, setnotify] = useState(null);  
+  const [notifications, setnotifications] = useState([]);
   function showNotificationDialog() {
     setOpen(true);
   }
@@ -71,6 +73,37 @@ export default function Navbar({onSearchChange }) {
       setIsLoggedIn(false);
     }
   }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      
+      const res = await fetch("/api/user/getnotification", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user: user.email,
+  
+        }),
+      });
+      const data = await res.json();
+      console.log(data);
+      if(res.status === 200) {
+        setnotify(data)
+        
+      }
+    };
+    fetchData();
+  }, [user]);
+
+
+  useEffect(() => {
+        
+        setnotifications(prevArray => [...prevArray, notify]);
+      
+  }, [notify]);
+
   return (
     <>
       <div>
@@ -157,7 +190,7 @@ export default function Navbar({onSearchChange }) {
                           onClick={showNotificationDialog}
                         />
                       </Link>
-
+                      
                       <Link
                         href="#"
                         className="ml-5 flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
@@ -430,15 +463,21 @@ export default function Navbar({onSearchChange }) {
                       </div>
                       <div className="relative mt-6 flex-1 px-4 sm:px-6">
                         {/* Replace with your content */}
-                        <h1 className="text-center mt-5 font-medium text-lg">
-                          No Notifications
-                        </h1>
-                        <div className="absolute inset-0 px-4 sm:px-6">
-                          <div
-                            className="h-full border-2 border-dashed border-gray-200"
-                            aria-hidden="false"
-                          />
-                        </div>
+                         
+                          <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                            
+                              {notify && notify.map((element) => (
+                                <>
+                                <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">{element.agent} accepted your order</li>
+                                 
+                                 </>
+                           ))} 
+
+                           
+                          </ul>
+                          
+
+                        
                         {/* /End replace */}
                       </div>
                     </div>

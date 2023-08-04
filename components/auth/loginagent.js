@@ -22,7 +22,7 @@ export default function Login() {
     if(res.status === 200) {
       // alert(data.message);
       localStorage.setItem("loggedInUser", JSON.stringify(data));
-      window.location.href = "/";
+      window.location.href = "/agent";
     } else {
       alert(data.message);
     }

@@ -1,6 +1,9 @@
 import { Fragment, useEffect, useState } from "react";
 import { Menu, Popover, Transition } from "@headlessui/react";
 import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
+
+const DynamicComponents = dynamic(() => import('./twelements'), { ssr: false });
 
 import {
   ChatBubbleLeftEllipsisIcon,
@@ -13,6 +16,8 @@ import {
   PlusIcon,
   ShareIcon,
   StarIcon,
+  PhoneIcon,
+  MapPinIcon
   
 } from "@heroicons/react/20/solid";
 import {
@@ -148,33 +153,26 @@ function classNames(...classes) {
 }
 
 
-export default function HomePage({search}) {
+export default function AgentPage() {
   const router = useRouter();
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [agent, setAgent] = useState({}); 
+
+  useEffect(() => {
+    const usr = localStorage.getItem("loggedInUser");
+    if (usr) {
+      // alert("You are already logged in " + JSON.parse(user).name);
+      setIsLoggedIn(true);
+      setAgent(JSON.parse(usr));
+    }
+    else {
+      setIsLoggedIn(false);
+    }
+  }, []);
   
 
-  const [topUser,setTopUser] = useState(null);
-  useEffect(() => {
-    const fetchData = async () => {
-      var sort_by = "reputation";
-      const res = await fetch("/api/user/findall", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          search: "",
-          sortby: sort_by,
-        }),
-      });
-      const data = await res.json();
-      console.log(data);
-      if(res.status === 200) {
-        setTopUser(data);
-      }
-    };
-    fetchData();
-  }, []);
+  
 
   const [tabs, setTabs] = useState([
     { name: "Newest", current: true },
@@ -191,50 +189,31 @@ export default function HomePage({search}) {
     });
     setTabs(tempTabs);
   };
-  const [agents, setagent] = useState(null);
+  const [clients, setClients] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       var sort_by = "recent";
-      if(tabs[1].current) sort_by = "view";
-      const res = await fetch("/api/shops/getshops", {
+      const res = await fetch("/api/clients/getclients", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          search: search,
+          agent: agent.email,
           sortby: sort_by,
         }),
       });
       const data = await res.json();
       console.log(data);
       if(res.status === 200) {
-        setagent(data);
+        setClients(data);
+        console.log(data)
+        console.log(agent)
       }
     };
     fetchData();
-  }, [search,tabs]);
-  const [trquestions, setTrQuestions] = useState(null);
-  useEffect(() => {
-    const fetchData = async () => {
-
-      const res = await fetch("/api/question/get_question", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          search: "",
-        }),
-      });
-      const data = await res.json();
-      console.log(data);
-      if(res.status === 200) {
-        setTrQuestions(data);
-      }
-    };
-    fetchData();
-  }, []);
+  }, [agent]);
+  
   return (
     <>
       <div className=" flex bg-indigo-600 min-h-full flex-col justify-between ">
@@ -293,20 +272,21 @@ export default function HomePage({search}) {
               <div className="mt-4">
                 <h1 className="sr-only">Recent</h1>
                 <ul role="list" className="space-y-4">
-                  {agents && agents.map((shop) => (
+                  {clients && clients.map((client) => (
+                    
                     <li
-                      key={shop._id}
+                      key={client._id}
                       className="bg-white px-4 py-6 shadow sm:rounded-lg sm:p-6"
                     >
                       <article
-                        aria-labelledby={"Shop-title-" + shop._id}
+                        aria-labelledby={"client-title-" + client._id}
                       >
                         <div>
                           <div className="mt-1 flex space-x-3">
                             <div className="flex-shrink-0">
                               <Image
                                 className="h-10 w-10 rounded-full"
-                                src={shop.imageUrl}
+                                src={client.clientImg}
                                 height={1000} width={1000}
                                 alt=""
                               />
@@ -317,62 +297,53 @@ export default function HomePage({search}) {
                                   href={"/"}
                                   className="hover:underline"
                                 >
-                                  {shop.name}
+                                  {client.client}
                                 </a>
                               </p>
                               <p className=" text-xs text-gray-500">
-                                  {shop.city}
+                                  {client.clientEmail}
                               </p>
                               
                             </div>
 
-                            <div className="pb-2 m-1 flex-shrink-0 self-center">
-                            <span className="inline-flex items-center">
-                            <StarIcon
-                                  className="h-3 w-3 m-1 "
-                                  aria-hidden="true"
-                            />
-                            <span className="font-medium text-sm text-gray-500">
-                            {shop.rating}/5
-                                </span>
-                                </span>
-                            </div>
+                          
                             
                           </div>
-                          <p class="m-3 font-normal text-sm  text-gray-700 dark:text-gray-600"> <span className="pr-1 font-medium"> Location:</span>  {shop.address}</p>
+                          <div className="inline-flex mt-4">
+                          <MapPinIcon className="text-gray-500 hover:text-gray-900 h-4 w-4 ml-2" />
+                          <p class="ml-2 font-normal text-sm  text-gray-700 dark:text-gray-600"> <span className="pr-1 font-medium"> location{client.clientLocation}</span> </p>
+                          </div>
                           <div className="mt-3 flex justify-between space-x-8">
                           <div class="flex items-center"> 
-                           <p class="m-3 font-medium text-xs  text-gray-700 dark:text-gray-600" > Available services : </p>
+                          <PhoneIcon className="text-gray-500 hover:text-gray-900 h-4 w-4 ml-2" />
+                           <p class="m-2 font-medium text-xs  text-gray-700 dark:text-gray-600" >  {client.clientPhone}</p>
 
-                          {shop.services.map((service) => (
-                           <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-400 dark:text-gray-900">{service}</span>
-                           ))}  
+                          
                            </div>
                            <div className="flex text-sm">
                             <span className="inline-flex items-center text-sm">
-                              <span className=" text-gray-900 font-semibold">
                               
-                                <Button variant="outlined" size="small" onClick={() => {router.push({
-                                      pathname: '/shop/',
-                                      query: { email: shop.email}
-                                  })}}>
-                                  ORDER
-                                </Button>
                                 
-                              </span>
+                              <div className="m-1">
+                              <DynamicComponents clientinfo = {client} agent ={agent.name}/>
+                                </div>
+
+                                
+                                
+                              
                             </span>
                           </div>
                            </div>
                           
                         </div>
                         
-                        
-
-    
-
-                        
+                      
                       </article>
                     </li>
+                      
+                    
+                    
+                    
                   ))}
                 </ul>
               </div>
