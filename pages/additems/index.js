@@ -53,54 +53,54 @@ export default function Additems() {
     
       const shirts ={
       name: "Shirts", 
-      wash: e.target.shirtWash.value, 
-      dryClean: e.target.shirtDryClean.value, 
-      iron: e.target.shirtIroning.value, 
+      wash: e.target.shirtWash?.value, 
+      dryClean: e.target.shirtDryClean?.value, 
+      iron: e.target.shirtIroning?.value, 
     }
 
     const tops ={
       name: "Tops",
-      wash: e.target.topsWash.value, 
-      dryClean: e.target.topsDryClean.value, 
-      iron: e.target.topsIroning.value, 
+      wash: e.target.topsWash?.value, 
+      dryClean: e.target.topsDryClean?.value, 
+      iron: e.target.topsIroning?.value, 
     }
 
     const bottoms ={
        
       name: "Bottoms",
-      wash: e.target.bottomsWash.value, 
-      dryClean: e.target.bottomsDryClean.value, 
-      iron: e.target.bottomsIroning.value, 
+      wash: e.target.bottomsWash?.value, 
+      dryClean: e.target.bottomsDryClean?.value, 
+      iron: e.target.bottomsIroning?.value, 
     }
 
     const suits ={
       
       name: "Suits",
-      wash: e.target.suitWash.value, 
-      dryClean: e.target.suitDryClean.value, 
-      iron: e.target.suitIroning.value, 
+      wash: e.target.suitWash?.value, 
+      dryClean: e.target.suitDryClean?.value, 
+      iron: e.target.suitIroning?.value, 
     }
 
     const dresses ={
       
       name: "Dresses", 
-      wash: e.target.dressWash.value, 
-      dryClean: e.target.dressDryClean.value, 
-      iron: e.target.dressIroning.value, 
+      wash: e.target.dressWash?.value, 
+      dryClean: e.target.dressDryClean?.value, 
+      iron: e.target.dressIroning?.value, 
     }
 
     const bedsheets ={
       name: "BedSheets",
-      wash: e.target.bedWash.value, 
-      dryClean: e.target.bedDryClean.value, 
-      iron: e.target.bedIroning.value, 
+      wash: e.target.bedWash?.value, 
+      dryClean: e.target.bedDryClean?.value, 
+      iron: e.target.bedIroning?.value, 
     }
 
     const child ={
       name: "Child Clothes",
-      wash: e.target.childWash.value, 
-      dryClean: e.target.childDryClean.value, 
-      iron: e.target.childIroning.value, 
+      wash: e.target.childWash?.value, 
+      dryClean: e.target.childDryClean?.value, 
+      iron: e.target.childIroning?.value, 
     }
 
 

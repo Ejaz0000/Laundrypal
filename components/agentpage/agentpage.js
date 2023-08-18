@@ -190,6 +190,7 @@ export default function AgentPage() {
     setTabs(tempTabs);
   };
   const [clients, setClients] = useState(null);
+  const [orders, setOrders] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       var sort_by = "recent";
@@ -213,14 +214,79 @@ export default function AgentPage() {
     };
     fetchData();
   }, [agent]);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      
+      const res2 = await fetch("/api/shops/getTask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: agent.email,
+  
+        }),
+      });
+      const data2 = await res2.json();
+      console.log(data2);
+      if(res2.status === 200) {
+        setOrders(data2)
+        console.log(data2)
+        
+      }
+    };
+    fetchData();
+  }, [clients]);
+
+
   
   return (
     <>
       <div className=" flex bg-indigo-600 min-h-full flex-col justify-between ">
         <div className="py-10">
-          <div className=" mx-auto max-w-3xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-8 lg:px-8">
+          <div className=" mx-8 grid  grid-cols-6 gap-4 px-8">
+
+          <div className="col-span-2 p-2">
+
+          <div className="m-4 w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-600 dark:border-gray-700">
+    <div className="flex items-center justify-between mb-4">
+        <h5 className="text-xl font-bold leading-none text-gray-700 dark:text-white">Orders to Complete</h5>
+        
+   </div>
+   <div className="flow-root">
+        <ul role="list" className="my-4 space-y-3">
+          
+        {orders && orders.map((order) => (
+
+            <li className="">
+                <div className="p-3 rounded-lg bg-blue-100 ">
+                    
+                    <div className="min-w-0">
+                        <p classNamme="text-sm font-medium text-gray-900 truncate dark:text-white">
+                          Client : {order.client}
+                        </p>
+
+                        
+                    </div>
+                    <div className="text-xs font-medium text-gray-600">{order.clientPhone}</div>
+                    <div className="inline-flex items-center text-gray-700 dark:text-white text-xs font-normal">
+                       <p className="mr-3">Pickup Date: {order.pickup?.slice(0,10)} </p> 
+                       <p>Delivery Date: {order.delivery?.slice(0,10)}</p>
+                    </div>
+                </div>
+            </li>
             
-            <main className="mx-auto max-w-2xl lg:col-span-9 xl:col-span-12">
+            
+            ))}
+        </ul>
+   </div>
+</div>
+            
+            </div>
+            
+            <main className="max-w-2xl col-span-3 mx-2 p-2">
               <div className="px-4 sm:px-0">
                 <div className="sm:hidden">
                   <label htmlFor="question-tabs" className="sr-only">
@@ -325,7 +391,7 @@ export default function AgentPage() {
                               
                                 
                               <div className="m-1">
-                              <DynamicComponents clientinfo = {client} agent ={agent.name}/>
+                              <DynamicComponents clientinfo = {client} agent ={agent}/>
                                 </div>
 
                                 

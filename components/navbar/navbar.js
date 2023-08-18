@@ -468,7 +468,15 @@ export default function Navbar({onSearchChange }) {
                             
                               {notify && notify.map((element) => (
                                 <>
-                                <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">{element.agent} accepted your order</li>
+                                <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                                <p className="font-medium text-lg text-gray-900">{element.agent} accepted your order </p>
+                                <p className=" text-xs text-gray-500">
+                                  Pickup date: {element.pickup?.slice(0,10)}
+                                </p>
+                                <p className=" text-xs text-gray-500">
+                                  Delivery date: {element.delivery?.slice(0,10)}
+                                </p>
+                                </li>
                                  
                                  </>
                            ))} 

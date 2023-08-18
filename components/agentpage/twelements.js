@@ -50,18 +50,40 @@ const acceptorder = async () => {
           "Content-Type": "application/json",
         },  
         body: JSON.stringify({
-          client : client.clientEmail,
-          agent : agent,
-          pickup : pickup.toISOString(),
-          delivery : delivery.toISOString(),
+          client : client.client,
+          clientEmail : client.clientEmail,
+          clientPhone : client.clientPhone,
+          agent : agent.name,
+          agentEmail : agent.email,
+          pickup : pickup?.toISOString(),
+          delivery : delivery?.toISOString(),
         }),
       });
   
       const data2 = await res2.json();
       
       if(res2.status === 200) {
-        alert("Accepted order");
+
+        const res = await fetch("/api/clients/removeclient", {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },  
+          body: JSON.stringify({
+            id : client._id,
+            
+          }),
+        });
+    
+        const data = await res.json();
+
+        if(res2.status === 200) {
+        alert("Order Accepted");
         window.location.href = "/agent/";
+        }
+        else {
+          alert(data.message);
+        }
       } else {
         alert(data2.message);
       }

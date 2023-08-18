@@ -95,6 +95,437 @@ const Shirts =({prop1, prod ,change}) => {
 
 };
 
+const Tops =({prop1, prod ,change}) => {
+
+  
+
+  return (
+    <div>
+<div className="m-4 w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-600 dark:border-gray-700">
+    <div className="flex items-center justify-between mb-4">
+        <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Price per Items</h5>
+        
+   </div>
+   <div className="flow-root">
+        <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p classNamme="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Wash
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.wash}
+                    </div>
+                </div>
+            </li>
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Dry Clean
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.dryClean}
+                    </div>
+                </div>
+            </li>
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Iron
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.iron}
+                    </div>
+                </div>
+            </li>
+            
+            
+        </ul>
+   </div>
+</div>
+
+
+
+<div>
+<DynamicComponents service={prop1} product= {prod} change={change}/>
+</div>
+
+</div>
+
+);
+
+};
+
+const Bottoms =({prop1, prod ,change}) => {
+
+  
+
+  return (
+    <div>
+<div className="m-4 w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-600 dark:border-gray-700">
+    <div className="flex items-center justify-between mb-4">
+        <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Price per Items</h5>
+        
+   </div>
+   <div className="flow-root">
+        <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p classNamme="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Wash
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.wash}
+                    </div>
+                </div>
+            </li>
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Dry Clean
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.dryClean}
+                    </div>
+                </div>
+            </li>
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Iron
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.iron}
+                    </div>
+                </div>
+            </li>
+            
+            
+        </ul>
+   </div>
+</div>
+
+<div>
+<DynamicComponents service={prop1} product= {prod} change={change}/>
+</div>
+
+</div>
+
+);
+
+};
+
+
+const Suits =({prop1, prod ,change}) => {
+
+  
+
+  return (
+    <div>
+<div className="m-4 w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-600 dark:border-gray-700">
+    <div className="flex items-center justify-between mb-4">
+        <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Price per Items</h5>
+        
+   </div>
+   <div className="flow-root">
+        <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p classNamme="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Wash
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.wash}
+                    </div>
+                </div>
+            </li>
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Dry Clean
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.dryClean}
+                    </div>
+                </div>
+            </li>
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Iron
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.iron}
+                    </div>
+                </div>
+            </li>
+            
+            
+        </ul>
+   </div>
+</div>
+
+<div>
+<DynamicComponents service={prop1} product= {prod} change={change}/>
+</div>
+
+</div>
+
+);
+
+};
+
+const Dressess =({prop1, prod ,change}) => {
+
+  
+
+  return (
+    <div>
+<div className="m-4 w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-600 dark:border-gray-700">
+    <div className="flex items-center justify-between mb-4">
+        <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Price per Items</h5>
+        
+   </div>
+   <div className="flow-root">
+        <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p classNamme="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Wash
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.wash}
+                    </div>
+                </div>
+            </li>
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Dry Clean
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.dryClean}
+                    </div>
+                </div>
+            </li>
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Iron
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.iron}
+                    </div>
+                </div>
+            </li>
+            
+            
+        </ul>
+   </div>
+</div>
+
+<div>
+<DynamicComponents service={prop1} product= {prod} change={change}/>
+</div>
+
+</div>
+
+);
+
+};
+
+const Children =({prop1, prod ,change}) => {
+
+  
+
+  return (
+    <div>
+<div className="m-4 w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-600 dark:border-gray-700">
+    <div className="flex items-center justify-between mb-4">
+        <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Price per Items</h5>
+        
+   </div>
+   <div className="flow-root">
+        <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p classNamme="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Wash
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.wash}
+                    </div>
+                </div>
+            </li>
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Dry Clean
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.dryClean}
+                    </div>
+                </div>
+            </li>
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Iron
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.iron}
+                    </div>
+                </div>
+            </li>
+            
+            
+        </ul>
+   </div>
+</div>
+
+<div>
+<DynamicComponents service={prop1} product= {prod} change={change}/>
+</div>
+
+</div>
+
+);
+
+};
+
+const BedSheets =({prop1, prod ,change}) => {
+
+  
+
+  return (
+    <div>
+<div className="m-4 w-full max-w-md p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-600 dark:border-gray-700">
+    <div className="flex items-center justify-between mb-4">
+        <h5 className="text-xl font-bold leading-none text-gray-900 dark:text-white">Price per Items</h5>
+        
+   </div>
+   <div className="flow-root">
+        <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p classNamme="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Wash
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.wash}
+                    </div>
+                </div>
+            </li>
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Dry Clean
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.dryClean}
+                    </div>
+                </div>
+            </li>
+            <li className="py-3 sm:py-4">
+                <div className="flex items-center space-x-4">
+                    
+                    <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
+                            Iron
+                        </p>
+                        
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                        ${prod?.iron}
+                    </div>
+                </div>
+            </li>
+            
+            
+        </ul>
+   </div>
+</div>
+
+<div>
+<DynamicComponents service={prop1} product= {prod} change={change}/>
+</div>
+
+</div>
+
+);
+
+};
+
+
+
 export default function ViewShop({prop ,change}) {
   const router = useRouter();
 
@@ -219,9 +650,13 @@ export default function ViewShop({prop ,change}) {
       </div>
       
       {tabs[0].current && <Shirts prop1 = {services} prod = {shop.shirt} change={change}/>}
-      {tabs[1].current && <ProfileActivity />}
-      {tabs[2].current && <ProfileSave />}
-      {tabs[3].current && <ProfileEdit />}
+      {tabs[1].current && <Tops prop1 = {services} prod = {shop.top} change={change}/>}
+      {tabs[2].current && <Bottoms prop1 = {services} prod = {shop.bottom} change={change}/>}
+      {tabs[3].current && <Suits prop1 = {services} prod = {shop.suit} change={change}/>}
+      {tabs[4].current && <Dressess prop1 = {services} prod = {shop.dress} change={change}/>}
+      {tabs[5].current && <Children prop1 = {services} prod = {shop.child} change={change}/>}
+      {tabs[6].current && <BedSheets prop1 = {services} prod = {shop.bedsheet} change={change}/>}
+      
     </div>
   );
 }

@@ -5,11 +5,14 @@ import AcceptedOrders from "../../../models/acceptedOrders";
 export default async function handler(req, res) {
     if(req.method === "POST") {
         await connect.connect();
-        const { client, agent, pickup, delivery} = req.body;
+        const { client, clientEmail, clientPhone, agent, agentEmail, pickup, delivery} = req.body;
         
         const newAccpted = new AcceptedOrders({
             client,
+            clientEmail,
+            clientPhone,
             agent,
+            agentEmail,
             pickup,
             delivery
             
