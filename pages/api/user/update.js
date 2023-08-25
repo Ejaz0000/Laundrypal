@@ -14,11 +14,8 @@ export default async function handler(req, res) {
               email: req.body.email,
               password: req.body.password,
               imageUrl: req.body.imageUrl,
-              github: req.body.github,
-              twitter: req.body.twitter,
-              facebook: req.body.facebook,
-              bio: req.body.bio,
-              title: req.body.title,
+              phone: req.body.phone,
+              city: req.body.city,
               location: req.body.location,
             };
             const user = await Users.findOneAndUpdate(filter, update, {
