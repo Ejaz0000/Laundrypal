@@ -344,8 +344,8 @@ export default function HomePage({search}) {
                           <div class="flex items-center"> 
                            <p class="m-3 font-medium text-xs  text-gray-700 dark:text-gray-600" > Available services : </p>
 
-                          {shop.services.map((service) => (
-                           <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-400 dark:text-gray-900">{service}</span>
+                          {shop.services.map((service, index) => (
+                           <span class="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-gray-400 dark:text-gray-900" key={index}>{service}</span>
                            ))}  
                            </div>
                            <div className="flex text-sm">
