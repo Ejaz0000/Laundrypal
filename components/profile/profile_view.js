@@ -59,24 +59,28 @@ const ProfileInfo = () => {
                     <div className="border rounded px-4 py-2 mt-4">
                         <div className="flex space-x-10">
                             <div>
-                                <h1 className="text-center font-medium">{user.city}</h1>
-                                <h3>City</h3>
+                                
+                                <h3 className="font-bold text-lg">City</h3>
+                                <h2 className="text-center font-medium">{user.city}</h2>
                             </div>
                             <div>
-                                <h1 className="text-center font-medium">{user.location}</h1>
-                                <h3>Location</h3>
+                                
+                                <h3 className="font-bold text-lg">Location</h3>
+                                <h2 className="text-center font-medium">{user.location}</h2>
                             </div>
                         </div>
                         <div className="flex space-x-10 mt-4">
                             <div>
-                                <h1 className="text-center font-medium">
+                                
+                                <h3 className="font-bold text-lg">Email</h3>
+                                <h2 className="text-center font-medium">
                                     {user.email}
-                                </h1>
-                                <h3>Email</h3>
+                                </h2>
                             </div>
                             <div>
-                                <h1 className="text-center font-medium">{user.phone}</h1>
-                                <h3>Phone</h3>
+                                
+                                <h3 className="font-bold text-lg">Phone</h3>
+                                <h2 className="text-center font-medium">{user.phone}</h2>
                             </div>
                         </div>
                     </div>

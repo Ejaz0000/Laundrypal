@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Menu, Popover, Transition } from "@headlessui/react";
 import ViewShop from "../../components/xshop/shop_view";
+import Comment from "../../components/comment/comment";
 
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -78,6 +79,20 @@ function classNames(...classes) {
 export default function ShopPage() {
     const router = useRouter()
     const email = router.query.email
+    const [user, setUser] = useState({}); 
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+      const usr = localStorage.getItem("loggedInUser");
+      if (usr) {
+        // alert("You are already logged in " + JSON.parse(user).name);
+        setIsLoggedIn(true);
+        setUser(JSON.parse(usr));
+      }
+      else {
+        setIsLoggedIn(false);
+      }
+    }, []);
     
     const [agent, setAgent] = useState({});
     const [info, setInfo] = useState({
@@ -136,7 +151,13 @@ export default function ShopPage() {
             </main>
             <div className="col-span-2">
             <Calculate prop = {agent} values={info}/>
+            <Comment prop = {agent} client = {user}/>
             </div>
+
+            
+
+
+
             
           </div>
         </div>

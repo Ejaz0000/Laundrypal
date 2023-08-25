@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 import connect from "../../../database/connect";
-import AcceptedOrders from "../../../models/acceptedOrders";
+import Comments from "../../../models/comments";
 
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
     await connect.connect();
-    const {user} = req.body;
+    const {email} = req.body;
    
-      const notifications = await AcceptedOrders.find({clientEmail: user});
-      if (notifications) {
-        res.status(200).json(notifications.reverse());
+      const comments = await Comments.find({agent : email});
+      if (comments) {
+        res.status(200).json(comments.reverse());
       } else {
         res.status(409).json({ message: "Something went wrong"});
       }

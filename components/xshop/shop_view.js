@@ -17,6 +17,9 @@ import { useRouter } from "next/router";
 const DynamicComponents = dynamic(() => import('../twelements'), { ssr: false });
 
 
+const Rating = dynamic(() => import('./twelements'), { ssr: false });
+
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -614,6 +617,7 @@ export default function ViewShop({prop ,change}) {
         </div>
         
           <div className="p-4 flex-shrink-0 ml-auto">
+            
           <span className="inline-flex items-center">
                <StarIcon
                 className="h-3 w-3 m-1 "
@@ -623,6 +627,10 @@ export default function ViewShop({prop ,change}) {
                   {prop.rating}/5
                    </span>
                 </span>
+
+                <div>
+                <Rating/>
+            </div>
           </div>
         
       </div>

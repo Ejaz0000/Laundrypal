@@ -59,11 +59,11 @@ function ProfileEdit() {
       },  
       body: JSON.stringify({
         name: displayName,
-        email: user.email,
-        location: user.location,
+        email: email,
+        location: location,
         city: user.city,
         password: password,
-        phone: user.phone,
+        phone: phone,
         imageUrl: imageUrl,
 
       }),
