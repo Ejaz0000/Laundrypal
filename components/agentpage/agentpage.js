@@ -20,6 +20,15 @@ import Link from "next/link";
 
 
 
+const quicklinks = [
+  { name: "Facebook", href: "#" },
+  { name: "Github", href: "#" },
+  { name: "Twitter", href: "#" },
+];
+// const tabs = [
+//   { name: "Recent", href: "#", current: true },
+//   { name: "Most Viewed", href: "#", current: false }
+// ];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
