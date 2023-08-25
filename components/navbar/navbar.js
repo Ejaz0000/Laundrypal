@@ -18,6 +18,7 @@ import {
   
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { BsHandIndex } from "react-icons/bs";
 
 const navigation = [
   { name: "Home", href: "/", icon: HomeIcon, current: true },
@@ -466,8 +467,8 @@ export default function Navbar({onSearchChange }) {
                          
                           <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                             
-                              {notify && notify.map((element) => (
-                                <>
+                              {notify && notify.map((element, index) => (
+                                <div key={index}>
                                 <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
                                 <p className="font-medium text-lg text-gray-900">{element.agent} accepted your order </p>
                                 <p className=" text-xs text-gray-500">
@@ -478,7 +479,7 @@ export default function Navbar({onSearchChange }) {
                                 </p>
                                 </li>
                                  
-                                 </>
+                                 </div>
                            ))} 
 
                            

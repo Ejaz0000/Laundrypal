@@ -171,7 +171,7 @@ export default function Additems() {
                               
                               {agent.services?.map((service , index) => (
                                 
-                                  <div className="flex items-center min-w-0 mr-5 mt-3">
+                                  <div className="flex items-center min-w-0 mr-5 mt-3 " key={index}>
                                   <div className="m-2 flex">
                                   <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                                       For {service} 
@@ -204,7 +204,7 @@ export default function Additems() {
                     
                 {agent.services?.map((service , index) => (
                                 
-                                <div className="flex items-center min-w-0 mr-5 mt-3">
+                                <div className="flex items-center min-w-0 mr-5 mt-3 " key={index}>
                                 <div className="m-2 flex">
                                 <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                                     For {service} 
@@ -239,7 +239,7 @@ export default function Additems() {
                     
                 {agent.services?.map((service , index) => (
                                 
-                                <div className="flex items-center min-w-0 mr-5 mt-3">
+                                 <div className="flex items-center min-w-0 mr-5 mt-3" key={index}>
                                 <div className="m-2 flex">
                                 <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                                     For {service} 
@@ -274,7 +274,7 @@ export default function Additems() {
                     
                 {agent.services?.map((service , index) => (
                                 
-                                <div className="flex items-center min-w-0 mr-5 mt-3">
+                                <div className="flex items-center min-w-0 mr-5 mt-3" key={index}>
                                 <div className="m-2 flex">
                                 <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                                     For {service} 
@@ -309,7 +309,7 @@ export default function Additems() {
                     
                 {agent.services?.map((service , index) => (
                                 
-                                <div className="flex items-center min-w-0 mr-5 mt-3">
+                                <div className="flex items-center min-w-0 mr-5 mt-3" key={index}>
                                 <div className="m-2 flex">
                                 <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                                     For {service} 
@@ -344,7 +344,7 @@ export default function Additems() {
                     
                 {agent.services?.map((service , index) => (
                                 
-                                <div className="flex items-center min-w-0 mr-5 mt-3">
+                                <div className="flex items-center min-w-0 mr-5 mt-3" key={index}>
                                 <div className="m-2 flex">
                                 <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                                     For {service} 
@@ -379,7 +379,7 @@ export default function Additems() {
                     
                 {agent.services?.map((service , index) => (
                                 
-                                <div className="flex items-center min-w-0 mr-5 mt-3">
+                                <div className="flex items-center min-w-0 mr-5 mt-3" key={index}>
                                 <div className="m-2 flex">
                                 <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                                     For {service} 

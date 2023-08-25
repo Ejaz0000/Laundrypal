@@ -258,9 +258,9 @@ export default function AgentPage() {
    <div className="flow-root">
         <ul role="list" className="my-4 space-y-3">
           
-        {orders && orders.map((order) => (
+        {orders && orders.map((order, index) => (
 
-            <li className="">
+            <li key={index}>
                 <div className="p-3 rounded-lg bg-blue-100 ">
                     
                     <div className="min-w-0">

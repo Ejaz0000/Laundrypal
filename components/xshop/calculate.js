@@ -123,8 +123,8 @@ export default function Calculate({prop, values }) {
                         
                     </div>
                     <div className="text-base font-semibold text-gray-900 dark:text-white">
-                    {washService.map((elements) => (
-                           <div className="flex"><p className="font-medium mr-4">{elements.quantity} X {elements.product} = </p>${elements.total}</div>
+                    {washService.map((elements, index) => (
+                           <div className="flex" key={index}><p className="font-medium mr-4">{elements.quantity} X {elements.product} = </p>${elements.total}</div>
                            
                            ))}  
                     </div>
@@ -140,8 +140,8 @@ export default function Calculate({prop, values }) {
                         
                     </div>
                     <div className="text-base font-semibold text-gray-900 dark:text-white">
-                    {drycleanService.map((elements) => (
-                           <div className="flex"><p className="font-medium mr-4">{elements.quantity} X {elements.product} = </p>${elements.total}</div>
+                    {drycleanService.map((elements, index) => (
+                           <div className="flex" key={index}><p className="font-medium mr-4">{elements.quantity} X {elements.product} = </p>${elements.total}</div>
                            
                            ))}  
                     </div>
@@ -157,8 +157,8 @@ export default function Calculate({prop, values }) {
                         
                     </div>
                     <div className="text-base font-semibold text-gray-900 dark:text-white">
-                    {ironService.map((elements) => (
-                           <div className="flex"><p className="font-medium mr-4">{elements.quantity} X {elements.product} = </p>${elements.total}</div>
+                    {ironService.map((elements, index) => (
+                           <div className="flex" key={index}><p className="font-medium mr-4">{elements.quantity} X {elements.product} = </p>${elements.total}</div>
                            
                            ))}  
                     </div>
@@ -174,8 +174,8 @@ export default function Calculate({prop, values }) {
                         
                     </div>
                     <div className="text-base font-semibold text-gray-900 dark:text-white">
-                    {wNiService.map((elements) => (
-                           <div className="flex"><p className="font-medium mr-4">{elements.quantity} X {elements.product} = </p>${elements.total}</div>
+                    {wNiService.map((elements, index) => (
+                           <div className="flex" key={index}><p className="font-medium mr-4">{elements.quantity} X {elements.product} = </p>${elements.total}</div>
                            
                            ))}  
                     </div>
@@ -191,8 +191,8 @@ export default function Calculate({prop, values }) {
                         
                     </div>
                     <div className="text-base font-semibold text-gray-900 dark:text-white">
-                    {dNiService.map((elements) => (
-                           <div className="flex"><p className="font-medium mr-4">{elements.quantity} X {elements.product} = </p>${elements.total}</div>
+                    {dNiService.map((elements ,index) => (
+                           <div className="flex" key={index}><p className="font-medium mr-4">{elements.quantity} X {elements.product} = </p>${elements.total}</div>
                            
                            ))}  
                     </div>
