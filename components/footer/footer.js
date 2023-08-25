@@ -59,7 +59,7 @@ const Footer = () => {
                       href="https://github.com/greatrifat"
                       className="hover:underline "
                     >
-                      Developer's Github
+                      Developer Github
                     </Link>
                   </li>
                   <li>
