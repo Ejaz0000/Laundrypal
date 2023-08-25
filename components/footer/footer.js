@@ -36,7 +36,7 @@ const Footer = () => {
                 <ul className="text-gray-600 dark:text-gray-400 font-medium">
                   <li className="mb-4">
                     <Link href="#" className="hover:underline">
-                      Learn Programming
+                      Learn About Us
                     </Link>
                   </li>
                   <li>
@@ -44,7 +44,7 @@ const Footer = () => {
                       href="#"
                       className="hover:underline"
                     >
-                      Machine Leaening
+                      Tell Us
                     </Link>
                   </li>
                 </ul>
@@ -59,7 +59,7 @@ const Footer = () => {
                       href="https://github.com/greatrifat"
                       className="hover:underline "
                     >
-                      Github
+                      Developer's Github
                     </Link>
                   </li>
                   <li>

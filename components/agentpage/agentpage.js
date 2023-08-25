@@ -6,80 +6,20 @@ import dynamic from 'next/dynamic';
 const DynamicComponents = dynamic(() => import('./twelements'), { ssr: false });
 
 import {
-  ChatBubbleLeftEllipsisIcon,
-  CodeBracketIcon,
-  EllipsisVerticalIcon,
-  EyeIcon,
-  FlagIcon,
-  HandThumbUpIcon,
-  MagnifyingGlassIcon,
-  PlusIcon,
-  ShareIcon,
-  StarIcon,
+ 
   PhoneIcon,
   MapPinIcon
   
 } from "@heroicons/react/20/solid";
-import {
-  ArrowTrendingUpIcon,
-  Bars3Icon,
-  BellIcon,
-  FireIcon,
-  HomeIcon,
-  UserGroupIcon,
-  XMarkIcon,
-  InformationCircleIcon,
-  ChatBubbleBottomCenterTextIcon,
-  
-} from "@heroicons/react/24/outline";
-
-import { BsFillCaretDownFill as Downvote } from "react-icons/bs";
-import { BsFillCaretUpFill as Upvote } from "react-icons/bs";
 
 import { Button } from "@mui/material";
 import Image from "next/image";
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 import Link from "next/link";
 
-const items = [
-  { id: 1, title: 'Back End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
-  { id: 2, title: 'Front End Developer', department: 'Engineering', type: 'Full-time', location: 'Remote' },
-  { id: 3, title: 'User Interface Designer', department: 'Design', type: 'Full-time', location: 'Remote' },
-]
-const user = {
-  name: "Yeasir Arafat",
-  email: "yeasir402@gmail.com",
-  imageUrl:"/images/yeasir.jpg"
-};
-const navigation = [
-  { name: "Home", href: "#", icon: HomeIcon, current: true },
-  { name: "Tags", href: "/tags", icon: ArrowTrendingUpIcon, current: false },
-  { name: "Users", href: "/users", icon: UserGroupIcon, current: false },
-  { name: "Contact", href: "/contact", icon: ChatBubbleBottomCenterTextIcon, current: false },
-];
-const userNavigation = [
-  { name: "Your Profile", href: "#" },
-  { name: "Settings", href: "#" },
-  { name: "Sign out", href: "#" },
-];
-const communities = [
-  { name: "React", href: "#" },
-  { name: "Flutter", href: "#" },
-  { name: "Next JS", href: "#" },
-  { name: "Android", href: "#" },
-  { name: "JavaScript", href: "#" },
-  { name: "Java", href: "#" },
-];
 
-const quicklinks = [
-  { name: "Facebook", href: "#" },
-  { name: "Github", href: "#" },
-  { name: "Twitter", href: "#" },
-];
-// const tabs = [
-//   { name: "Recent", href: "#", current: true },
-//   { name: "Most Viewed", href: "#", current: false }
-// ];
+
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");

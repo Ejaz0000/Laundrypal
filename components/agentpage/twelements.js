@@ -11,13 +11,7 @@ import {
   initTE,
   } from "tw-elements";
 
-  import {
-    ArrowRightIcon,
-    ShareIcon,
-    StarIcon,
-  
-    
-  } from "@heroicons/react/20/solid";
+ 
 
 const Model = ({clientinfo, agent}) => {
   
